@@ -9,3 +9,9 @@ This directory contains SQL scripts demonstrating different types of joins using
 
 ## File
 - `joins_queries.sql`: Contains the SQL queries.
+
+
+# Subqueries
+
+- Wrote a non-correlated subquery to find properties with average rating > 4.0.
+- Wrote a correlated subquery to find users with more than 3 bookings.
