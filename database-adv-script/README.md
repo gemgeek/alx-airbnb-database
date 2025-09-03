@@ -15,3 +15,10 @@ This directory contains SQL scripts demonstrating different types of joins using
 
 - Wrote a non-correlated subquery to find properties with average rating > 4.0.
 - Wrote a correlated subquery to find users with more than 3 bookings.
+
+
+## Aggregations and Window Functions
+
+- Wrote a query using `COUNT` and `GROUP BY` to find the total number of bookings made by each user.
+- Used the `RANK()` window function to rank properties based on the total number of bookings they have received.
+- File: `aggregations_and_window_functions.sql`
