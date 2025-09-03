@@ -7,7 +7,8 @@ SELECT b.booking_id, b.booking_date, u.name AS user_name, p.title AS property_ti
 FROM bookings b
 JOIN users u ON b.user_id = u.user_id
 JOIN properties p ON b.property_id = p.property_id
-JOIN payments pay ON b.booking_id = pay.booking_id;
+JOIN payments pay ON b.booking_id = pay.booking_id
+WHERE b.booking_date >= '2023-01-01' AND pay.amount > 0;
 
 -- Sample Output (from EXPLAIN, yours may vary)
 -- Seq Scan on bookings  (cost=0.00..1024.00 rows=50000 width=...)
@@ -29,7 +30,8 @@ SELECT b.booking_id, b.booking_date, u.name AS user_name, p.title AS property_ti
 FROM bookings b
 JOIN users u ON b.user_id = u.user_id
 JOIN properties p ON b.property_id = p.property_id
-LEFT JOIN payments pay ON b.booking_id = pay.booking_id;
+LEFT JOIN payments pay ON b.booking_id = pay.booking_id
+WHERE b.booking_date >= '2023-01-01' AND (pay.amount IS NULL OR pay.amount > 0);
 
 -- Sample Output (from EXPLAIN, yours may vary)
 -- Index Scan using idx_bookings_user_id on bookings  (cost=0.42..350.00 rows=50000 width=...)
